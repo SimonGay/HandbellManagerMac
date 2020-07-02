@@ -28,9 +28,9 @@ handstroke = [ True, True ] # Is the next stroke for this bell a handstroke?
 
 keyboard = Controller()
 pg.init()
-print("Monitoring handbell controller\n")
-numJoysticks = pg.joystick.get_count()
-print("Joysticks found: ", numJoysticks)
+#print("Monitoring handbell controller\n")
+numJoysticks = min(pg.joystick.get_count(),2)
+#print("Joysticks found: ", numJoysticks)
 js = [ ]
 for n in range(numJoysticks):
     js.append(pg.joystick.Joystick(n))
