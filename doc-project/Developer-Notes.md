@@ -3,7 +3,7 @@
 ## Release Checklist
 
 1. Update the version number in the code
-  1. TODO: Actually add a version number to the code :)
+  1. It's the VERSION variable at the top of `HandbellManagerMac.py`
 2. Create a commit for the release. E.g. `git commit -a -m 'version 1.0.0'`
 3. Tag the release. E.g. `git tag v1.0.0`
 4. Push the tagged release commit to GitHub
