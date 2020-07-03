@@ -9,7 +9,7 @@ from tkinter import ttk
 from pynput.keyboard import Controller
 
 PROGNAME = "Handbell Manager for Mac"
-VERSION = "0.1.0"
+VERSION = "0.1.1-SNAPSHOT"
 
 scale = 2048
 
