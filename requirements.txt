@@ -1,0 +1,6 @@
+pygame==1.9.6
+pynput==1.6.8
+pyobjc-core==6.2.1
+pyobjc-framework-Cocoa==6.2.1
+pyobjc-framework-Quartz==6.2.1
+six==1.15.0

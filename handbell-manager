@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mydir="$(dirname $0)"
+venv_dir="$mydir/venv"
+if [[ -d "$venv_dir" ]]; then
+  #TODO: This is debugging output that will eventually be removed
+  echo "Running from venv at $venv_dir"
+  PYTHON="$venv_dir/bin/python"
+else
+  PYTHON=python3
+fi
+
+exec "$PYTHON" "$mydir/HandbellManagerMac.py" "$*"
