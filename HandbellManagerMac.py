@@ -40,8 +40,31 @@ backstrokeCountVar = []
 root = None
 
 # This one is the actual store of the handstroke/backstroke state
-handstroke = [ True, True ] # Is the next stroke for this bell a handstroke? 
+handstroke = [ True, True ] # Is the next stroke for this bell a handstroke?
 
+<<<<<<< Updated upstream
+=======
+debounce = 200  # Don't ring more often than this
+next_ring = [ 0, 0 ]   # The time after which it is possible to ring again
+
+<<<<<<< HEAD
+keyboard = Controller()
+pg.init()
+print("Monitoring handbell controller\n")
+numJoysticks = pg.joystick.get_count()
+print("Joysticks found: ", numJoysticks)
+js = [ ]
+for n in range(numJoysticks):
+    js.append(pg.joystick.Joystick(n))
+    js[n].init()
+
+controllerOptions = [ ]
+for n in range(numJoysticks):
+    controllerOptions.append(str(n))
+
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 def isInt(s):
     try: 
         int(s)
@@ -56,17 +79,21 @@ def update():
         thisAxis = convertAxis(axisVar[n].get())
         axisValue = js[thisController].get_axis(thisAxis) * scale
         inputVar[n].set("{0:>5}".format(100*round(axisValue / 100)))
-        if axisValue > int(handstrokeVar[n].get()) and handstroke[n]:
+        if axisValue > int(handstrokeVar[n].get()) and handstroke[n] and pg.time.get_ticks() > next_ring[n]:
             #print("Handstroke for bell %s at %s\n" % (n,int(handstrokeVar[n].get())))
             handstrokeCountVar[n].set(handstrokeCountVar[n].get()+1)
             keyboard.press(key[n])
+            pg.time.wait(5)
             keyboard.release(key[n])
+            next_ring[n] = pg.time.get_ticks() + debounce
             handstroke[n] = False
-        if axisValue < int(backstrokeVar[n].get()) and not handstroke[n]:
+        if axisValue < int(backstrokeVar[n].get()) and not handstroke[n] and pg.time.get_ticks() > next_ring[n]:
             #print("Backstroke for bell %s at %s\n" % (n,int(backstrokeVar[n].get())))
             backstrokeCountVar[n].set(backstrokeCountVar[n].get()+1)
             keyboard.press(key[n])
+            pg.time.wait(5)
             keyboard.release(key[n])
+            next_ring[n] = pg.time.get_ticks() + debounce
             handstroke[n] = True
     root.after(5,update)
 
