@@ -42,12 +42,9 @@ root = None
 # This one is the actual store of the handstroke/backstroke state
 handstroke = [ True, True ] # Is the next stroke for this bell a handstroke?
 
-<<<<<<< Updated upstream
-=======
 debounce = 200  # Don't ring more often than this
 next_ring = [ 0, 0 ]   # The time after which it is possible to ring again
 
-<<<<<<< HEAD
 keyboard = Controller()
 pg.init()
 print("Monitoring handbell controller\n")
@@ -62,9 +59,6 @@ controllerOptions = [ ]
 for n in range(numJoysticks):
     controllerOptions.append(str(n))
 
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 def isInt(s):
     try: 
         int(s)
