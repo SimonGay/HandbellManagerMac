@@ -12,7 +12,7 @@ Download HandbellManagerMac.zip, unzip it, and move it to your Applications fold
 
 ### Installing manually
 
-If the executable doesn't work for you, you can try installing manually. This might be necessary if have the most recent MacOS (Big Sur).
+If the executable doesn't work for you, you can try installing manually. This might be necessary if you have the most recent MacOS (Big Sur).
 
 1. Make sure your Mac has a recent enough version of MacOS: at least 10.13 (High Sierra).
 2. Install the latest version of Python. At the time of writing this is 3.9.1. Find it at www.python.org.
