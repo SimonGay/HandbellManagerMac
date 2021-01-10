@@ -10,6 +10,12 @@ You can find a blog post about this software [here](https://www.handbellringing.
 
 Download HandbellManagerMac.zip, unzip it, and move it to your Applications folder. Double click to launch it.
 
+You will probably need to adjust your security settings to allow Handbell Manager to send keystrokes to the ringing application that you are using.
+
+Go into System Preferences, then Security & Privacy, then into the Privacy tab.
+
+Click on Accessibility and you should see a list with options to allow certain apps to control your computer. Use the + button to add Terminal, IDLE3 and HandbellManagerMac to the list. 
+
 ### Installing manually
 
 If the executable doesn't work for you, you can try installing manually. This might be necessary if you have the most recent MacOS (Big Sur).
