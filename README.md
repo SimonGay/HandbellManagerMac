@@ -8,26 +8,25 @@ You can find a blog post about this software [here](https://www.handbellringing.
 
 ### Using the standalone executable
 
-Download HandbellManagerMac.app.zip, unzip it, and move it to your Applications folder. Double click to launch it.
+Download HandbellManagerMac.zip, unzip it, and move it to your Applications folder. Double click to launch it.
 
 ### Installing manually
 
-If for some reason the executable doesn't work for you, you can try installing manually:
+If the executable doesn't work for you, you can try installing manually. This might be necessary if have the most recent MacOS (Big Sur).
 
-1. Install Python 3.8.
-2. Somehow install these other programs: sdl sdl_image sdl_mixer sdl_ttf portmidi
-3. Install the Python dependencies using pip or Anaconda.
-
-```bash
-pip3 install pygame pynput
-```
-4. Download HandbellManagerMac.py and save it somewhere.
+1. Make sure your Mac has a recent enough version of MacOS: at least 10.13 (High Sierra).
+2. Install the latest version of Python. At the time of writing this is 3.9.1. Find it at www.python.org.
+3. Install Homebrew. Find it at brew.sh
+4. In a Terminal window, type brew install sdl sdl_image sdl_mixer sdl_ttf portmidi
+5. In a Terminal window, type pip3 install pygame==1.9.6 (if you have a recent Mac with the M1 chip, just try pip3 install pygame). If pip3 doesn't work, just use pip.
+6. In a Terminal window, type pip3 install pynput 
+7. Download HandbellManagerMac.py and save it somewhere.
 
 ## Usage
 
 1. Plug in your eBells.
 2. If you have the executable, double-click to launch it.
-3. If you installed manually, control-click on HandbellManagerMac.py and select "Open with IDLE 3.8.3" (or whatever your version of IDLE is). Select "Run Module" from the "Run" menu.
+3. If you installed manually, control-click on HandbellManagerMac.py and select "Open with IDLE 3.9.1" (or whatever your version of IDLE is). Select "Run Module" from the "Run" menu.
 
 That should run Handbell Manager for Mac. You should see a window that looks like this:
 
@@ -49,6 +48,5 @@ BSD 3-Clause license.
 ## Author
 
 Handbell Manager for Mac is written by [Simon Gay](https://github.com/SimonGay).
-Packaging support was added by [Andrew Janke](https://apjanke.net).
 
 The project home page is <https://github.com/SimonGay/HandbellManagerMac>.
