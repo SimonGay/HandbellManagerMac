@@ -143,7 +143,7 @@ def detectBells():
     pg.init()
     numJoysticks = pg.joystick.get_count()
     print("Bells found: ", numJoysticks)
-    numJoysticks = max(numJoysticks,2)
+    numJoysticks = min(numJoysticks,2)
     print("Using ", numJoysticks, " bells.")
     for n in range(numJoysticks):
         js.append(pg.joystick.Joystick(n))
