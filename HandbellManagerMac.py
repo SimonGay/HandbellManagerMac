@@ -330,14 +330,14 @@ def update():
         else:
             buttonRField[n]["bg"] = "#ffffff"
         if leftButtonValue and pg.time.get_ticks() > next_press[n]:
-            keyboard.press(leftButton[n])
+            keyboard.press(buttonLVar[n].get())
             pg.time.wait(5)
-            keyboard.release(leftButton[n])
+            keyboard.release(buttonLVar[n].get())
             next_press[n] = pg.time.get_ticks() + debounce
         if rightButtonValue and pg.time.get_ticks() > next_press[n]:
-            keyboard.press(rightButton[n])
+            keyboard.press(buttonRVar[n].get())
             pg.time.wait(5)
-            keyboard.release(rightButton[n])
+            keyboard.release(buttonRVar[n].get())
             next_press[n] = pg.time.get_ticks() + debounce
     root.after(5,update)
 
